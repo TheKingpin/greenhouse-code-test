@@ -1,0 +1,34 @@
+@import '../variables';
+
+header {
+    height: 75px;
+    width: 100vw;
+    padding: 0;
+    background-color: $background-color;
+    display: table;
+    h1 {
+        color: white;
+        padding: 0 0 0 20px;
+        margin: 0;
+        font-size: $h1-font-size * .5;
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+footer {
+    height: 40px;
+    width: 100vw;
+    display: table;
+    p {
+        padding: 0 0 0 20px;
+        font-size: $p-font-size-sm;
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+.content-main {
+    background-color: $content-color;
+    margin: 0;
+    padding: 2rem;
+    min-height: 1000px;
+}

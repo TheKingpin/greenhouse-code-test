@@ -1,0 +1,27 @@
+// Variables
+$color-ghibli-black: rgb(34,24,21);
+$color-ghibli-blue: rgb(16,156,235);
+$color-ghibli-green: rgb(0,195,0);
+
+$colors: (
+    black: $color-ghibli-black,
+    blue: $color-ghibli-blue,
+    green: $color-ghibli-green
+);
+
+$background-color: map-get($colors, black);
+$content-color: map-get($colors, blue);
+
+// Size
+$font-size-root: 16px;
+$font-size-base: 1rem;
+$typegrid-formula: 1.414;
+
+$p-font-size: 1rem;
+$p-font-size-lg: 1.25rem;
+$p-font-size-sm: .75rem;
+
+$h1-font-size: 2.25rem;
+$h2-font-size: 1.5rem;
+$h3-font-size: 1.25rem;
+$h4-font-size: 1rem;
