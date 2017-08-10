@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'variables';
+
+html,
+body,
+ul,
+ol {
+  margin:  0;
+  padding: 0;
+}
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: $font-size-base;
+    background-color: $background-color;
+}
+body {
+    h1 {
+        font-size: $h1-font-size;
+    }
+    h2 {
+        font-size: $h2-font-size;
+    }
+    h3 {
+        font-size: $h3-font-size;
+    }
+    h4 {
+        font-size: $h4-font-size;
+    }
+    p {
+        color: white;
+    }
+    a {
+        color: map-get($colors, green);
+        text-decoration: none;
+    }
+}

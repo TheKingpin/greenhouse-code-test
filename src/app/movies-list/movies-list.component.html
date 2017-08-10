@@ -1,0 +1,51 @@
+<div class="search">
+    <input type="text" placeholder="search..." [(ngModel)]="filter">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th [ngClass]="{'active': isActive('title')}">
+          <a href="#" (click)="sort('title')">title</a>
+          <i *ngIf="!reverse && isActive('title')" class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+          <i *ngIf="reverse && isActive('title')" class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+      </th>
+      <th [ngClass]="{'active': isActive('director')}">
+        <a href="#" (click)="sort('director')">director</a>
+        <i *ngIf="!reverse && isActive('director')" class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+        <i *ngIf="reverse && isActive('director')" class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+      </th>
+      <th [ngClass]="{'active': isActive('producer')}">
+        <a href="#" (click)="sort('producer')">producer</a>
+        <i *ngIf="!reverse && isActive('producer')" class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+        <i *ngIf="reverse && isActive('producer')" class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+      </th>
+      <th [ngClass]="{'active': isActive('release_date')}">
+        <a href="#" (click)="sort('release_date')">release date</a>
+        <i *ngIf="!reverse && isActive('release_date')" class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+        <i *ngIf="reverse && isActive('release_date')" class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+      </th>
+      <th [ngClass]="{'active': isActive('rt_score')}">
+        <a href="#" (click)="sort('rt_score')">score</a>
+        <i *ngIf="!reverse && isActive('rt_score')" class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+        <i *ngIf="reverse && isActive('rt_score')" class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+      </th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of movies | orderMoviesBy:sortBy:reverse | containsSearchResult:filter">
+      <td [innerHTML]="movie.title  | highlight : filter"></td>
+      <td [innerHTML]="movie.director  | highlight : filter"></td>
+      <td [innerHTML]="movie.producer  | highlight : filter"></td>
+      <td [innerHTML]="movie.release_date  | highlight : filter"></td>
+      <td [innerHTML]="movie.rt_score  | highlight : filter"></td>
+      <td [innerHTML]="movie.description  | highlight : filter"></td>
+    </tr>
+    <tr>
+      <td colspan="6">
+        <p><small>*</small> According to <a href="https://www.rottentomatoes.com/">Rotten Tomatoes</a></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
