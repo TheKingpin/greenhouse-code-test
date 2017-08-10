@@ -28,5 +28,5 @@ export class Movie implements IMovie {
     public species: string[];
     public vehicles: string[];
 
-    constructor(movie: any) {}
+    constructor(movie: any) { }
 }

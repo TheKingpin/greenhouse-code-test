@@ -1,25 +1,45 @@
 import { Movie } from './../models/movie.model';
-import { Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'orderBy'
+    name: 'orderMoviesBy'
 })
 export class OrderMoviesByPipe implements PipeTransform {
-    transform(items: Movie[], property?: string): Array<any> {
+    transform(movies: Movie[], property?: string, reverse?: boolean): Array<any> {
 
+        if (!movies || movies.length === 0) {
+            return [];
+        }
         if (!property) {
             property = 'title';
         }
-        items.sort((a: Movie, b: Movie) => {
-            if (a[property] < b[property]) {
+
+        movies.sort((a: Movie, b: Movie) => {
+
+            let _a: any;
+            let _b: any;
+
+            if (property === 'rt_score' || property === 'release_date') {
+                _a = parseInt(a[property], 10);
+                _b = parseInt(b[property], 10);
+            } else {
+                _a = a[property];
+                _b = b[property];
+            }
+
+            if (_a < _b) {
                 return -1;
-            } else if (a[property] > b[property]) {
+            } else if (_a > _b) {
                 return 1;
             } else {
                 return 0;
             }
         });
 
-        return items;
+        if (reverse) {
+            movies.reverse();
+        }
+
+        return movies;
     }
 }

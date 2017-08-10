@@ -7,24 +7,24 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class MoviesService {
 
-  private apiUrl = 'https://ghibliapi.herokuapp.com/';
-  private filmsUrl = 'films';
+    private apiUrl = 'https://ghibliapi.herokuapp.com/';
+    private filmsUrl = 'films';
 
-  constructor(public http: Http) { }
+    constructor(public http: Http) { }
 
-  public getMovies(): Promise<Movie[]> {
-    const _callUrl: string = this.apiUrl + this.filmsUrl;
+    public getMovies(): Promise<Movie[]> {
+        const _callUrl: string = this.apiUrl + this.filmsUrl;
 
     return this.http.get(_callUrl)
-      .toPromise()
-      .then((response) => {
-        return response.json() as Movie[];
-      })
-      .catch(this.errorHandler);
+        .toPromise()
+        .then((response) => {
+            return response.json() as Movie[];
+        })
+        .catch(this.errorHandler);
   }
 
-  private errorHandler(error): Promise<any> {
-    return Promise.reject(error.message || error);
-  }
+    private errorHandler(error): Promise<any> {
+        return Promise.reject(error.message || error);
+    }
 
 }
