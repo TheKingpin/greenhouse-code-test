@@ -7,9 +7,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class OrderMoviesByPipe implements PipeTransform {
     transform(movies: Movie[], property?: string, reverse?: boolean): Array<any> {
 
-        console.log('property', property);
-        console.log('reverse', reverse);
-
         if (!movies || movies.length === 0) {
             return [];
         }
