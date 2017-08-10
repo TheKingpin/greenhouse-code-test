@@ -2,11 +2,13 @@
 $color-ghibli-black: rgb(34,24,21);
 $color-ghibli-blue: rgb(16,156,235);
 $color-ghibli-green: rgb(0,195,0);
+$color-text-highlight: rgba(255,201,80,0.8);
 
 $colors: (
     black: $color-ghibli-black,
     blue: $color-ghibli-blue,
-    green: $color-ghibli-green
+    green: $color-ghibli-green,
+    highlight: $color-text-highlight
 );
 
 $background-color: map-get($colors, black);
