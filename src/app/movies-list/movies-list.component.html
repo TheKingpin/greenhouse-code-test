@@ -26,7 +26,7 @@
         <i *ngIf="reverse && isActive('release_date')" class="fa fa-sort-amount-asc" aria-hidden="true"></i>
       </th>
       <th [ngClass]="{'active': isActive('rt_score')}">
-        <a href="#" (click)="sort('rt_score')">score</a>
+        <a href="#" (click)="sort('rt_score')">score *</a>
         <i *ngIf="!reverse && isActive('rt_score')" class="fa fa-sort-amount-desc" aria-hidden="true"></i>
         <i *ngIf="reverse && isActive('rt_score')" class="fa fa-sort-amount-asc" aria-hidden="true"></i>
       </th>
