@@ -13,7 +13,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Description of the project
+## Assignment details
 
 The project is a simple list of Studio Ghibli movies. The project does not focus on visual design, instead, is a prototype which explores functionality in order to facilitate and simplfy user interaction. 
 
